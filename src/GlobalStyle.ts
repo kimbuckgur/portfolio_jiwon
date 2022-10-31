@@ -18,5 +18,11 @@ const GlobalStyle = css`
     outline: none;
     padding-left: 10px;
   }
+  p,
+  h1,
+  h2,
+  h3 {
+    margin: 0px;
+  }
 `;
 export default GlobalStyle;
