@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "@emotion/styled";
 
 const TitleSection = () => {
+  const navigate = useNavigate();
+
+  const moveMenuPage = () => {
+    navigate("/menu");
+  };
+
   return (
     <>
       <_TitleLayout>
@@ -12,13 +19,13 @@ const TitleSection = () => {
           <_Title color="#ffffff" text_align="left">
             FOLIO
           </_Title>
-          <_StartDot />
+          <_StartDot onClick={moveMenuPage} />
         </_BlackTitleBox>
       </_TitleLayout>
       <_Line />
       <_TextLayout>
         <_Text color="#242424" text_align="right">
-          시작<_TextPoint>점</_TextPoint>을
+          시작<_TextPoint onClick={moveMenuPage}>점</_TextPoint>을
         </_Text>
         <_Text color="#ffffff" text_align="left">
           눌러주세요
@@ -46,6 +53,7 @@ const _Title = styled.h1<TitleType>`
   color: ${(props) => props.color};
   width: 200px;
   text-align: ${(props) => props.text_align};
+  text-shadow: 4px 4px 0px rgba(255, 255, 255, 0.3);
 `;
 
 const _BlackTitleBox = styled.div`
@@ -101,11 +109,12 @@ const _Text = styled.p<TextType>`
 
 const _TextPoint = styled.span`
   cursor: pointer;
+  transition: all 0.3s;
   font-weight: 700;
   color: #ff4b4b;
 
   &:hover {
-    background-color: #f54545;
+    color: #e92a2a;
   }
 `;
 

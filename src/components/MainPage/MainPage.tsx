@@ -20,6 +20,7 @@ const _Container = styled.div`
   height: 100vh;
   background-color: #ffffff;
   display: flex;
+  overflow-x: hidden;
   flex-direction: column;
   align-items: center;
   justify-content: center;
